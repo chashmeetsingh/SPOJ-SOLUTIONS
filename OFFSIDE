@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+	long long int min,x,y,c,i,a[10001],b[10001];
+	cin>>x>>y;
+	while(x!=0 and y!=0){
+		for(i=0;i<x;i++){
+			cin>>a[i];
+		}
+		for(i=0;i<y;i++){
+			cin>>b[i];
+		}
+		sort(a,a+x);
+		sort(b,b+y);
+		c=0;
+		min=a[0];
+		if(min>=b[0])	c++;
+		if(min>=b[1])	c++;
+		if(c>=2){
+			cout<<"N"<<endl;
+		}
+		else{
+			cout<<"Y"<<endl;
+		}
+		cin>>x>>y;
+	}
+	return 0;
+}
