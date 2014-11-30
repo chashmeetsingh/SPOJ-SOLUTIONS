@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+	long long n,c=0,i,a[10];;
+	for(i=0;i<10;i++){
+		cin>>a[i];
+	}
+	c=0;
+	i=0;
+	while(i!=10){
+		if(c>100){
+			break;
+		}
+		else{
+			if(abs(100-c)<abs(a[i]+c-100)){
+				break;
+			}
+			else{
+				c+=a[i];
+			}
+		}
+		i++;
+	}
+	cout<<c<<endl;
+	return 0;
+}
