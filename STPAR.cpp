@@ -1,46 +1,42 @@
-#include <iostream>
-#include <algorithm>
-#include <cmath>
-#include <cstdio>
-#include <stack>
+#include <bits/stdc++.h>
  
 using namespace std;
  
 int n,a[1001];
 stack<int> s;
-bool nores;
+bool b;
  
 int main() {
-    //freopen("test.in","r",stdin);
+    
     while (cin>>n){
         if (n==0) break;
         while (!s.empty()) s.pop();
         for(int i=1; i<=n; i++) cin >> a[i];
-        int current=1;
+        int c=1;
         int i=1;
-        nores=false;
-        while (current<=n && i<=n){
+        b=false;
+        while (c<=n && i<=n){
             if (!s.empty()){
-                while (!s.empty() && s.top()==current) {
+                while (!s.empty() && s.top()==c) {
                     s.pop();
-                    current++;
+                    c++;
                     }
                 }
-                while (i<=n && a[i]!=current){
+                while (i<=n && a[i]!=c){
                     s.push(a[i]);
                     i++;
                 }
                 if (i<=n) {
                         i++;
-                        current++;
+                        c++;
                 }
                 else
-                if (!s.empty() && s.top()!=current) {
-                    nores=true;
+                if (!s.empty() && s.top()!=c) {
+                    b=true;
                 }
             }
  
-        if (nores) cout << "no";
+        if (b) cout << "no";
         else
             cout << "yes";
         cout << endl;
