@@ -1,2 +1,3 @@
 SPOJ-SOLUTIONS
 ==============
+SPOJ solutions
